@@ -1,0 +1,40 @@
+<form ng-submit="save()">
+    <div class="row form-group">
+        <div class="col-xs-4">
+            <label for="task-title">Title</label>
+        </div>
+        <div class="col-xs-8">
+            <input id="task-title" class="form-control" type="text" ng-model="task.title" required/>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-xs-4">
+            <label for="task-description">Description</label>
+        </div>
+        <div class="col-xs-8">
+            <textarea id="task-description" class="form-control" ng-model="task.description">
+            </textarea>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-xs-4">
+            <label for="task-priority">Priority</label>
+        </div>
+        <div class="col-xs-8">
+            <select class="form-control" id="task-priority"
+                    ng-options="slug as title for (slug, title)  in priorityList"
+                    ng-model="task.priority" required>
+            </select>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-xs-4">
+            <label for="task-deadline">Deadline</label>
+        </div>
+        <div class="col-xs-8">
+            <input class="form-control" id="task-deadline" type="datetime-local"
+                   ng-model="task.deadline" ng-min="minDate">
+        </div>
+    </div>
+    <button class="form-control" type="submit">Save task</button>
+</form>

@@ -1,0 +1,5 @@
+/angular/node_modules
+/angular/bower_components
+/angular/dist
+/angular/.tmp
+/cordova/platforms
